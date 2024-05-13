@@ -12,15 +12,15 @@ def extract():
 
 @app.route('/products')
 def products():
-    return render_template("products.htm.jinja")
+    return render_template("products.html.jinja")
 
 @app.route('/author')
 def author():
-    return render_template("author.htm.jinja")
+    return render_template("author.html.jinja")
 
 @app.route('/product/<product_id>')
-def product():
-    return render_template("product.htm.jinja", product_id=product_id)
+def product(product_id):
+    return render_template("product.html.jinja", product_id=product_id)
 
 @app.route('/hello')
 @app.route('/hello/<name>')
