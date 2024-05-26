@@ -1,7 +1,8 @@
 {% extends "base.html.jinja" %}
+
 {% block content %}
 <p>To jest strona ekstrakcji opinii.</p>
-<form action="" method="POST" class="container">
+<form action="{{url_for('extract')}}" method="POST" class="container">
   <div class="row g-3 align-items-center">
   <div class="col-auto">
     <label for="product_id" class="cor-form-laber">Kod produktu</label>
@@ -11,17 +12,17 @@
   </div>
     <div class="col-auto">
         <span id="product_idHelpInLine" class="form-text">
-        Kod produktu musi zawierać 8-10 cyfr.
+        Kod produktu musi zawierać 5-10 cyfr.
         </span>
     </div>
       <div class="col-auto">
-  <button type="submit" class="btn btn-primary mb-3">Pobierz opinie</button>
+        <button type="submit" class="btn btn-primary mb-3">Pobierz opinie</button>
       </div>
 </form>
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+{% if error is defined %}
+        <div class = "alert alert-warning alert-dismissable fade show" role="alert">
+            <strong>Uwaga!</strong> {{error}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %} 
 {% endblock %}

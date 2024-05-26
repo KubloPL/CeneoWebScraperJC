@@ -1,0 +1,21 @@
+.nav-link {
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #212529;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-item:last-child {
+    margin-bottom: 0;
+}
